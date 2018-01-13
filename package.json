@@ -1,0 +1,33 @@
+{
+  "name": "widget-sales-api",
+  "version": "0.1.0",
+  "description": "A simple Express server that returns clients and sales of widgets",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/albertkawmi/widget-sales-api.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "lowdb",
+    "api",
+    "example"
+  ],
+  "author": "Albert Kawmi <albert@kawmi.co> (http://kawmi.co/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albertkawmi/widget-sales-api/issues"
+  },
+  "homepage": "https://github.com/albertkawmi/widget-sales-api#readme",
+  "devDependencies": {
+    "jest": "22.0.6",
+    "supertest": "3.0.0"
+  },
+  "dependencies": {
+    "express": "4.16.2"
+  }
+}
