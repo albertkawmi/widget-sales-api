@@ -2,13 +2,14 @@
   "name": "widget-sales-api",
   "version": "0.1.0",
   "description": "A simple Express server that returns clients and sales of widgets",
-  "main": "index.js",
+  "main": "app/server.js",
   "scripts": {
-    "start": "NODE_ENV=production node index.js",
-    "dev": "NODE_ENV=development node index.js",
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "eslint": "eslint .",
+    "start": "NODE_ENV=production node app/server.js",
+    "dev": "NODE_ENV=development node app/server.js",
+    "test": "PORT=4242 jest",
+    "test:watch": "npm test -- --watchAll",
+    "test:coverage": "npm test -- --coverage",
+    "eslint": "eslint ./app",
     "now": "now alias $(now) widget-sales-api",
     "deploy": "npm run eslint && npm test && npm run now"
   },
@@ -37,6 +38,7 @@
     "supertest": "3.0.0"
   },
   "dependencies": {
+    "dotenv": "4.0.0",
     "express": "4.16.2"
   },
   "jest": {

@@ -1,6 +1,6 @@
 /* eslint-env jest */
 const supertest = require('supertest')
-const app = require('./index.js')
+const app = require('./server.js')
 const testApp = supertest(app)
 
 test('/', () => {
