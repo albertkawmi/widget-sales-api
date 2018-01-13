@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/albertkawmi/widget-sales-api#readme",
   "devDependencies": {
+    "babel-eslint": "8.2.1",
+    "eslint": "4.15.0",
     "jest": "22.0.6",
     "supertest": "3.0.0"
   },

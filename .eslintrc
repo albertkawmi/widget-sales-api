@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+      "node": true
+  },
+  "rules" : {
+      "indent" : [0, 2],
+      "no-multi-spaces":0,
+      "no-nested-ternary":0,
+      "new-cap": 0,
+      "no-undef" : 1,
+      "vars-on-top" : 0,
+      "no-unused-vars": 1,
+      "no-use-before-define": 0,
+      "no-params-reassign": 0,
+      "prefer-template": 0,
+      "comma-dangle" : 0,
+      "image-uses-alt": 0,
+      "redundant-alt": 0,
+      "valid-aria-role": 0
+  }
+}
