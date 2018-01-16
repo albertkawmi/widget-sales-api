@@ -1,9 +1,12 @@
 require('dotenv').config()
 const express = require('express')
 const db = require('./database')
+const { allowCrossOrigin } = require('./utils')
 const { githubLink } = require('./constants')
 
 const app = express()
+
+app.use(allowCrossOrigin)
 
 app.get('/', (req, res) => {
   res.json({
