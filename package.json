@@ -10,8 +10,9 @@
     "test:watch": "npm test -- --watchAll",
     "test:coverage": "npm test -- --coverage",
     "eslint": "eslint ./app",
-    "now": "now alias $(now) widget-sales-api",
-    "deploy": "npm run eslint && npm test && npm run now"
+    "now:staging": "now --public",
+    "now:production": "now alias $(now --public) widget-sales-api",
+    "deploy": "npm run eslint && npm test:coverage && npm run now:production"
   },
   "repository": {
     "type": "git",
