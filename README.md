@@ -63,7 +63,9 @@ The following commands are available:
 
 ## Deployment
 
-[Zeit Now.sh](https://zeit.co/now) is used for cloud infrastructure and hosting.
+[Zeit Now.sh](https://zeit.co/now) is used for cloud infrastructure and hosting. All Now deployments in their free plan will be given a subdomain with a hash under now.sh (see example link below). These URLs can be used as a staging step after local development.
+
+For production, a friendly alias (without the hash) can be redirected to the new instance URL. This redirect means zero downtime. It also means deployments can be reverted by simply reassigning the alias to a previous instance.
 
 ### Staging
 `npm run now:staging` will deploy the project to a URL like https://widget-sales-api-xxxxx.now.sh. You can create as many of these staging deployments as you like (within Now.sh's limits).
@@ -78,6 +80,15 @@ This will run ESLint, run tests and finally it will run `npm run now:production`
 The current alias is `widget-sales-api` which is connected to my credentials. You can modify this to anything you like in `package.json` and Now will allow you to deploy it (you may need to confirm your email address if it's your first time using Now, then it will store credentials on your machine.)
 
 The current production URL is: https://widget-sales-api.now.sh
+
+### Reverting
+Since the deployment is simple an alias change, it is easy to revert:
+
+1. Run `npm run now -- ls` to see a list of running instances
+2. Copy the URL for the instance you wish to revert to
+3. Run `npm run now -- alias the-new-instance-xxx.now.sh widget-sales-api`
+
+__NOTE:__ if you are on the free plan of now.sh you can only have a few instances running concurrently. To remove instances, run the `npm run now -- ls` command and then use `npm run now -- rm the-instance-to-remove.now.sh` to destroy old instances.
 
 ## Related links
 
