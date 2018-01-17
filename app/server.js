@@ -16,7 +16,7 @@ app.use(allowCrossOrigin)
  */
 app.get('/', (req, res) => {
   res.json({
-    message: `Welcome to the Widget Sales API. Docs can be found at ${githubLink}`
+    message: `Welcome to the Widget Sales API. GET /clients or /sales to see some data. Docs can be found at ${githubLink}`
   })
 })
 
@@ -34,7 +34,7 @@ app.get('/fault', (req, res) => {
 
 app.get('*', (req, res) => {
   res.status(404).json({
-    error: `Path ${req.path} does not exist. Please see ${githubLink} for more information.`
+    error: `Path ${req.path} does not exist. GET /clients or /sales to see some data. Please see ${githubLink} for more information.`
   })
 })
 
