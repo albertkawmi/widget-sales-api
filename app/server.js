@@ -1,13 +1,19 @@
 require('dotenv').config()
 const express = require('express')
 const db = require('./database')
-const { allowCrossOrigin } = require('./utils')
+const { allowCrossOrigin, loggingService } = require('./utils')
 const { githubLink } = require('./constants')
 
+/*
+ * Initialise App
+ */
 const app = express()
-
+app.use(loggingService)
 app.use(allowCrossOrigin)
 
+/*
+ * Routes
+ */
 app.get('/', (req, res) => {
   res.json({
     message: `Welcome to the Widget Sales API. Docs can be found at ${githubLink}`
