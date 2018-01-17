@@ -57,7 +57,7 @@ The following commands are available:
 * `npm run test:watch` runs tests in watch mode for TDD
 * `npm run test:coverage` runs tests once, with coverage report
 
-## Linting
+## Code Linting
 
 [ESLint](https://eslint.org/) is used and can be configured in the `.eslintrc` file.
 
@@ -82,11 +82,11 @@ The current alias is `widget-sales-api` which is connected to my credentials. Yo
 The current production URL is: https://widget-sales-api.now.sh
 
 ### Reverting
-Since the deployment is simple an alias change, it is easy to revert:
+Since the deployment is simply an alias change, it is easy to revert:
 
 1. Run `npm run now -- ls` to see a list of running instances
 2. Copy the URL for the instance you wish to revert to
-3. Run `npm run now -- alias the-new-instance-xxx.now.sh widget-sales-api`
+3. Run `npm run now -- alias the-new-instance-xxxxx.now.sh widget-sales-api`
 
 __NOTE:__ if you are on the free plan of now.sh you can only have a few instances running concurrently. To remove instances, run the `npm run now -- ls` command and then use `npm run now -- rm the-instance-to-remove.now.sh` to destroy old instances.
 
