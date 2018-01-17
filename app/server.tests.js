@@ -25,6 +25,7 @@ test('/sales', () => {
     expect(typeof sale.clientId).toBe('number')
     expect(typeof sale.productName).toBe('string')
     expect(sale.size).toMatch(/small|medium|large/)
+    expect(typeof sale.price).toBe('number')
   }
 })
 
