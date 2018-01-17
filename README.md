@@ -10,17 +10,27 @@ brew install yarn 1.3.2
 ```
 For other operating systems see the [Yarn installation docs](https://yarnpkg.com/lang/en/docs/install/#windows-tab).
 
+Once Yarn is installed, you're ready to go:
+
+```bash
+git clone git@github.com:albertkawmi/widget-sales-api.git
+cd widget-sales-api
+yarn install
+```
+
 __NOTE__: Yarn creates a `yarn.lock` file, locking dependency versions so that installs run consistently across machines. At project start, latest stable version of Yarn was 1.3.2. If you have any problems installing or running dependencies, please try this version.
 
 ## Run locally `npm run dev`
 
 For development, you can run a local server with `npm run dev`
 
-This will listen on the default port 80 (which is probably undesirable). You can configure this in the `.env` file:
+This will listen on the default port 80 (which is probably undesirable). You can configure this in the `.env` file in root project directory:
 ```bash
 echo PORT=4000 > .env
 ```
-Nodemon will listen for file changes and restart the local server automatically.
+`.env` is `.gitignore`d so it will not be committed to source control. This  means you'll need to add it on each machine you work on.
+
+After `npm run dev` Nodemon will listen for file changes and restart the local server automatically.
 
 ### Debugging
 The `--inspect` flag is used to enable debugging. You can use Chrome Dev tools for this:
@@ -33,7 +43,7 @@ A new window will open with the Chrome debugger.
 
 ### Run locally in production mode
 
-`npm run dev` uses [Nodemon](https://github.com/remy/nodemon), debugging and sets environment variable. `NODE_ENV=development`. If you wish to test the server locally as if it were in production use:
+`npm run dev` uses [Nodemon](https://github.com/remy/nodemon), debugging and sets the environment variable `NODE_ENV=development`. If you wish to test the server locally as if it were in production use:
 ```bash
 npm start
 ```
@@ -49,7 +59,7 @@ The following commands are available:
 
 ## Linting
 
-[ESLint] is used and can be configured in the `.eslintrc` file.
+[ESLint](https://eslint.org/) is used and can be configured in the `.eslintrc` file.
 
 ## Deployment
 
@@ -59,9 +69,13 @@ The following commands are available:
 `npm run now:staging` will deploy the project to a URL like https://widget-sales-api-xxxxx.now.sh. You can create as many of these staging deployments as you like (within Now.sh's limits).
 
 ### Production
-`npm run now:production` is like staging, but it points the project alias to the deployed instance.
+Use the command:
+```bash
+npm run deploy
+```
+This will run ESLint, run tests and finally it will run `npm run now:production`. This last step is like the now:staging command, but it points the project alias to the deployed instance.
 
-The current alias is `widget-sales-api` which is connected to my email address. You can modify this to anything you like in `package.json` and Now will allow you to deploy it (you may need to confirm your email address if it's your first time using Now, then it will store your credentials.)
+The current alias is `widget-sales-api` which is connected to my credentials. You can modify this to anything you like in `package.json` and Now will allow you to deploy it (you may need to confirm your email address if it's your first time using Now, then it will store credentials on your machine.)
 
 The current production URL is: https://widget-sales-api.now.sh
 
