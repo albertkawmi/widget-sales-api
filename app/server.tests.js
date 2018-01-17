@@ -7,7 +7,7 @@ test('/', () => {
   return testApp.get('/')
     .expect('Content-Type', /application\/json/)
     .expect(200, {
-      message: 'Welcome to the Widget Sales API. Docs can be found at https://github.com/albertkawmi/widget-sales-api'
+      message: 'Welcome to the Widget Sales API. GET /clients or /sales to see some data. Docs can be found at https://github.com/albertkawmi/widget-sales-api'
     })
 })
 

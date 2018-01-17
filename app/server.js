@@ -34,7 +34,7 @@ app.get('/fault', (req, res) => {
 
 app.get('*', (req, res) => {
   res.status(404).json({
-    error: `Path ${req.path} does not exist. GET /clients or /sales to see some data. Please see ${githubLink} for more information.`
+    error: `Path ${req.path} does not exist. Please see ${githubLink} for more information.`
   })
 })
 
