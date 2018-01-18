@@ -45,7 +45,7 @@ A new window will open with the Chrome debugger.
 
 `yarn dev` uses [Nodemon](https://github.com/remy/nodemon), debugging and sets the environment variable `NODE_ENV=development`. If you wish to test the server locally as if it were in production use:
 ```bash
-npm start
+yarn start
 ```
 
 ## Tests
@@ -53,13 +53,15 @@ npm start
 
 The following commands are available:
 
-* `npm test` runs tests once
+* `yarn test` runs tests once
 * `yarn test:watch` runs tests in watch mode for TDD
 * `yarn test:coverage` runs tests once, with coverage report
 
 ## Code Linting
 
-[ESLint](https://eslint.org/) is used and can be configured in the `.eslintrc` file.
+[ESLint](https://eslint.org/) is used for linting and can be configured in the `.eslintrc` file. Run `yarn eslint` to check from the command line (or use an ESLint plugin for your code editor).
+
+`yarn eslint` will run before deployment.
 
 ## Deployment
 
@@ -75,7 +77,7 @@ Use the command:
 ```bash
 yarn deploy
 ```
-This will run ESLint, run tests and finally it will run `yarn now:production`. This last step is like the now:staging command, but it points the project alias to the deployed instance.
+This will run ESLint, run tests and finally it will run `yarn now:production`. This last step is like the `now:staging` command, but it points the project alias to the newly deployed instance.
 
 The current alias is `widget-sales-api` which is connected to my credentials. You can modify this to anything you like in `package.json` and Now will allow you to deploy it (you may need to confirm your email address if it's your first time using Now, then it will store credentials on your machine.)
 
