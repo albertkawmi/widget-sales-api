@@ -1,5 +1,5 @@
 /* eslint-env jest */
-const { loggingService } = require('./')
+const { loggingService, get404message } = require('./')
 
 const consoleLog = jest.spyOn(console, 'log')
   .mockImplementation(() => {})
@@ -24,4 +24,9 @@ test('loggingService', () => {
   expect(consoleLog).toHaveBeenCalledWith(
     expect.stringMatching(/GET \/clients localhost 1\.2\.3\.4/)
   )
+})
+
+test('get404message', () => {
+  expect(get404message('/not/a/page'))
+    .toMatchSnapshot()
 })

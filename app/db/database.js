@@ -1,6 +1,6 @@
 // TODO use an actual database
-const clients = require('../data/clients.json')
-const sales = require('../data/sales.json')
+const clients = require('./clients.json')
+const sales = require('./sales.json')
 
 module.exports = {
   getClients: () => clients,

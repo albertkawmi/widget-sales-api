@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get404message 1`] = `"Path /not/a/page does not exist. Please see https://github.com/albertkawmi/widget-sales-api for more information."`;

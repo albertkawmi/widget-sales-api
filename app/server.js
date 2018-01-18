@@ -1,8 +1,7 @@
 require('dotenv').config()
 const express = require('express')
-const db = require('./database')
 const { allowCrossOrigin, loggingService } = require('./utils')
-const { githubLink } = require('./constants')
+const routes = require('./routes')
 
 /*
  * Initialise App
@@ -10,33 +9,7 @@ const { githubLink } = require('./constants')
 const app = express()
 app.use(loggingService)
 app.use(allowCrossOrigin)
-
-/*
- * Routes
- */
-app.get('/', (req, res) => {
-  res.json({
-    message: `Welcome to the Widget Sales API. GET /clients or /sales to see some data. Docs can be found at ${githubLink}`
-  })
-})
-
-app.get('/sales', (req, res) => {
-  res.json(db.getSales())
-})
-
-app.get('/clients', (req, res) => {
-  res.json(db.getClients())
-})
-
-app.get('/fault', (req, res) => {
-  res.status(500).json({ error: 'Internal Server Error' })
-})
-
-app.get('*', (req, res) => {
-  res.status(404).json({
-    error: `Path ${req.path} does not exist. Please see ${githubLink} for more information.`
-  })
-})
+app.use(routes)
 
 // this check ensures that app.listen is not called in unit tests
 /* istanbul ignore next */
