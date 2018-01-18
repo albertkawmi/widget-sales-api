@@ -45,6 +45,6 @@
     "express": "4.16.2"
   },
   "jest": {
-    "testRegex": "tests.js$"
+    "testRegex": "test.js$"
   }
 }
