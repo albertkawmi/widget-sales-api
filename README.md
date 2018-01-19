@@ -66,9 +66,10 @@ The following commands are available:
 * `yarn test:coverage` runs tests once, with coverage report
 
 ## Code Linting
+```
+yarn eslint
+```
 [ESLint](https://eslint.org/) is used for linting and can be configured in the `.eslintrc` file. Run `yarn eslint` to check from the command line (or use an ESLint plugin for your code editor).
-
-`yarn eslint` will run before deployment.
 
 ## Deployment
 [Zeit Now.sh](https://zeit.co/now) is used for cloud infrastructure and hosting. All Now deployments in their free plan will be given a subdomain with a hash under now.sh (see example link below). These URLs can be used as a staging step after local development.
@@ -79,7 +80,7 @@ For production, a friendly alias (without the hash) can be redirected to the new
 ```
 yarn deploy:staging
 ```
-This will deploy the project to a URL like https://widget-sales-api-xxxxx.now.sh
+This will run ESLint, all tests and then deploy to a URL like https://widget-sales-api-xxxxx.now.sh
 
 ### Production
 ```bash
